@@ -1,7 +1,18 @@
 <template>
   <section>
-      <div class="section-content">  
-        {{ title}}
+    <div v-if="mode === 'default'" class="section-content section-default">
+        {{ title }}
+      </div>
+      <div v-else-if="mode === 'grid'" class="section-content section-grid">
+        {{ title }}
+      </div>
+      <div v-else-if="mode === 'calc'" class="section-content section-grid-calc">
+        <div class="section-header">
+          Header
+        </div>
+        <div class="section-body">
+          Body
+        </div>
       </div>
   </section>
 </template>
@@ -10,7 +21,14 @@
 export default {
   name: 'Section',
   props: {
-    title: String
+    title: {
+      type: String,
+      default: 'Title',
+    },
+    mode: {
+      type: String,
+      default: 'default'
+    }
   }
 }
 </script>
@@ -18,6 +36,8 @@ export default {
 <style lang="scss">
 
     section {
+        width: 100%;
+        height: 100%;
         background-color: #fff;
 
         .section-content {
@@ -26,13 +46,36 @@ export default {
 
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
 
             font-weight: 600;
             font-size: 2.5rem;
 
             color: rgba(0,0,0,0.25);
+
+          &.section-default, &.section-grid {
+            justify-content: center;
+            align-items: center;
+          }
+
+          &.section-grid-calc {
+
+            .section-header {
+              background: rgba($color: red, $alpha: 0.7);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .section-body {
+              height: calc(100% - 45px);
+              background: rgba($color: blue, $alpha: 0.7);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+          }
         }
     }
 
