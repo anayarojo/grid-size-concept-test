@@ -3,14 +3,14 @@
         <router-link class="action-link" to="/css-grid">
             <app-section title="CSS Grid"></app-section>
         </router-link>
-        <router-link class="action-link" to="/grid-calc">
-            <app-section title="Grid + Calc"></app-section>
+        <router-link class="action-link" to="/grid-calc-px">
+            <app-section title="Grid + Calc Px"></app-section>
+        </router-link>
+        <router-link class="action-link" to="/grid-calc-rem">
+            <app-section title="Grid + Calc Rem"></app-section>
         </router-link>
         <router-link class="action-link" to="/">
             <app-section title="Other"></app-section>
-        </router-link>
-        <router-link class="action-link" to="/">
-            <app-section title="Back"></app-section>
         </router-link>
     </div>
 </template>

@@ -6,7 +6,15 @@
       <div v-else-if="mode === 'grid'" class="section-content section-grid">
         {{ title }}
       </div>
-      <div v-else-if="mode === 'calc'" class="section-content section-grid-calc">
+      <div v-else-if="mode === 'calc-px'" class="section-content section-grid-calc-px">
+        <div class="section-header">
+          Header
+        </div>
+        <div class="section-body">
+          Body
+        </div>
+      </div>
+      <div v-else-if="mode === 'calc-rem'" class="section-content section-grid-calc-rem">
         <div class="section-header">
           Header
         </div>
@@ -57,7 +65,7 @@ export default {
             align-items: center;
           }
 
-          &.section-grid-calc {
+          &.section-grid-calc-px {
 
             .section-header {
               background: rgba($color: red, $alpha: 0.7);
@@ -69,6 +77,27 @@ export default {
 
             .section-body {
               height: calc(100% - 45px);
+              background: rgba($color: blue, $alpha: 0.7);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+
+          &.section-grid-calc-rem {
+
+            .section-header {
+              height: 5rem;
+              background: rgba($color: red, $alpha: 0.7);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .section-body {
+              height: calc(100% - 5rem);
               background: rgba($color: blue, $alpha: 0.7);
               display: flex;
               flex-direction: column;

@@ -22,11 +22,19 @@ const routes = [
     },
   },
   {
-    path: '/grid-calc',
-    name: 'GridCalc',
-    component: () => import('../views/GridCalc.vue'),
+    path: '/grid-calc-px',
+    name: 'GridCalcPx',
+    component: () => import('../views/GridCalcPx.vue'),
     meta: {
-      title: 'Grid calc'
+      title: 'Grid calc px'
+    },
+  },
+  {
+    path: '/grid-calc-rem',
+    name: 'GridCalcRem',
+    component: () => import('../views/GridCalcRem.vue'),
+    meta: {
+      title: 'Grid calc rem'
     },
   },
   {
