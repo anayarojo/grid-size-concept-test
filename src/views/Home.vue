@@ -1,17 +1,33 @@
 <template>
     <div class="home-view">
-        <router-link class="action-link" to="/css-grid">
-            <app-section title="CSS Grid"></app-section>
+      <app-section title="CSS Grid">
+        <router-link class="d-block btn btn-outline-primary" 
+        to="/css-grid">
+          Show
+          <i class="fas fa-fw fa-angle-double-right"></i>
         </router-link>
-        <router-link class="action-link" to="/grid-calc-px">
-            <app-section title="Grid + Calc Px"></app-section>
+      </app-section>
+      <app-section title="Grid + Calc Px">
+        <router-link class="d-block btn btn-outline-primary" 
+        to="/grid-calc-px">
+          Show
+          <i class="fas fa-fw fa-angle-double-right"></i>
         </router-link>
-        <router-link class="action-link" to="/grid-calc-rem">
-            <app-section title="Grid + Calc Rem"></app-section>
+      </app-section>
+      <app-section title="Grid + Calc Rem">
+        <router-link class="d-block btn btn-outline-primary" 
+        to="/grid-calc-rem">
+          Show
+          <i class="fas fa-fw fa-angle-double-right"></i>
         </router-link>
-        <router-link class="action-link" to="/">
-            <app-section title="Other"></app-section>
+      </app-section>
+      <app-section title="Other">
+        <router-link class="d-block btn btn-outline-primary" 
+        to="/">
+            Show
+            <i class="fas fa-fw fa-angle-double-right"></i>
         </router-link>
+      </app-section>
     </div>
 </template>
 

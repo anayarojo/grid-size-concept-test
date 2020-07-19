@@ -1,28 +1,42 @@
 <template>
-  <section>
-    <div v-if="mode === 'default'" class="section-content section-default">
-        {{ title }}
+  <div class="card h-100">
+    <template v-if="mode === 'default' || mode === 'grid'">
+      <div class="card-body d-flex flex-column justify-content-center align-items-center h-100">
+        <h1 class="text-muted font-weight-bold">{{ title }}</h1>
+        <slot></slot>
       </div>
-      <div v-else-if="mode === 'grid'" class="section-content section-grid">
-        {{ title }}
-      </div>
-      <div v-else-if="mode === 'calc-px'" class="section-content section-grid-calc-px">
-        <div class="section-header">
+    </template>  
+    <template v-else-if="mode === 'calc-px'">
+      <div class="card-header bg-white">
+        <h1 class="h3 text-muted font-weight-bold mb-0">
           Header
+        </h1>
+      </div>
+      <div class="card-body d-flex flex-column">
+        <div class="card-sub-header bg-primary text-white d-flex flex-column justify-content-center align-items-center h-64px">
+          Subheader
         </div>
-        <div class="section-body">
-          Body
+        <div class="card-sub-body bg-light text-muted d-flex flex-column justify-content-center align-items-center h-cal-100--64px">
+          Subbody
         </div>
       </div>
-      <div v-else-if="mode === 'calc-rem'" class="section-content section-grid-calc-rem">
-        <div class="section-header">
+    </template>
+    <template v-else-if="mode === 'calc-rem'">
+      <div class="card-header bg-white">
+        <h1 class="h3 text-muted font-weight-bold mb-0">
           Header
+        </h1>
+      </div>
+      <div class="card-body d-flex flex-column">
+        <div class="card-sub-header bg-primary text-white d-flex flex-column justify-content-center align-items-center h-3rem">
+          Subheader
         </div>
-        <div class="section-body">
-          Body
+        <div class="card-sub-body bg-light text-muted d-flex flex-column justify-content-center align-items-center h-cal-100--3rem">
+          Subbody
         </div>
       </div>
-  </section>
+    </template>
+  </div>
 </template>
 
 <script>
@@ -43,69 +57,18 @@ export default {
 
 <style lang="scss">
 
-    section {
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
+    .h-64px {
+      height: 64px;
+    }
+    .h-cal-100--64px {
+      height: calc(100% - 64px);
+    }
 
-        .section-content {
-            width: 100%;
-            height: 100%;
-
-            display: flex;
-            flex-direction: column;
-
-            font-weight: 600;
-            font-size: 2.5rem;
-
-            color: rgba(0,0,0,0.25);
-
-          &.section-default, &.section-grid {
-            justify-content: center;
-            align-items: center;
-          }
-
-          &.section-grid-calc-px {
-
-            .section-header {
-              background: rgba($color: red, $alpha: 0.7);
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-            }
-
-            .section-body {
-              height: calc(100% - 45px);
-              background: rgba($color: blue, $alpha: 0.7);
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-            }
-          }
-
-          &.section-grid-calc-rem {
-
-            .section-header {
-              height: 5rem;
-              background: rgba($color: red, $alpha: 0.7);
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-            }
-
-            .section-body {
-              height: calc(100% - 5rem);
-              background: rgba($color: blue, $alpha: 0.7);
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              align-items: center;
-            }
-          }
-        }
+    .h-3rem {
+      height: 3rem;
+    }
+    .h-cal-100--3rem {
+      height: calc(100% - 3rem);
     }
 
 </style>
