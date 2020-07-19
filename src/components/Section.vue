@@ -2,7 +2,7 @@
   <div class="card h-100">
     <template v-if="mode === 'default' || mode === 'grid'">
       <div class="card-body d-flex flex-column justify-content-center align-items-center h-100">
-        <h1 class="text-muted font-weight-bold">{{ title }}</h1>
+        <h1 class="text-muted text-center font-weight-bold">{{ title }}</h1>
         <slot></slot>
       </div>
     </template>  
