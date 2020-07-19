@@ -38,6 +38,14 @@ const routes = [
     },
   },
   {
+    path: '/grid-flex',
+    name: 'GridFlex',
+    component: () => import('../views/GridFlex.vue'),
+    meta: {
+      title: 'Grid flex'
+    },
+  },
+  {
     path: '*',
     redirect: '/'
   },

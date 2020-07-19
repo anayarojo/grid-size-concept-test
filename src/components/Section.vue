@@ -36,6 +36,21 @@
         </div>
       </div>
     </template>
+    <template v-else-if="mode === 'calc-flex'">
+      <div class="card-header bg-white">
+        <h1 class="h3 text-muted font-weight-bold mb-0">
+          Header
+        </h1>
+      </div>
+      <div class="card-body d-flex flex-column">
+        <div class="card-sub-header bg-primary text-white d-flex flex-column justify-content-center align-items-center h-64px">
+          Subheader
+        </div>
+        <div class="card-sub-body bg-light text-muted flex-grow-1 d-flex flex-column justify-content-center align-items-center">
+          Subbody
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -54,21 +69,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-
-    .h-64px {
-      height: 64px;
-    }
-    .h-cal-100--64px {
-      height: calc(100% - 64px);
-    }
-
-    .h-3rem {
-      height: 3rem;
-    }
-    .h-cal-100--3rem {
-      height: calc(100% - 3rem);
-    }
-
-</style>
