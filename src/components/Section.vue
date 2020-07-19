@@ -36,7 +36,7 @@
         </div>
       </div>
     </template>
-    <template v-else-if="mode === 'calc-flex'">
+    <template v-else-if="mode === 'grid-flex'">
       <div class="card-header bg-white">
         <h1 class="h3 text-muted font-weight-bold mb-0">
           Header
